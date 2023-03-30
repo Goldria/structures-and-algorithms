@@ -45,18 +45,6 @@ class MySet:
         return self.data.__str__()
 
 
-def random_guests_filling(members):
-    min_amount_of_guests = int(0.5 * len(members))
-    max_amount_of_guests = len(members)
-    guests = {}
-    for member in members:
-        amount_of_guests = random.randint(
-            min_amount_of_guests, max_amount_of_guests)
-        guests[member] = set(filter(lambda guest: guest !=
-                             member, random.sample(members, amount_of_guests)))
-    return guests
-
-
 def find_available_toys(kindergartens):
     kg_sets = [MySet(kg) for kg in kindergartens[1:]]
     for kg in kg_sets[1:]:
@@ -66,11 +54,9 @@ def find_available_toys(kindergartens):
 
 def find_missing_toys(kindergartens, toys):
     kg_sets = [MySet(kg) for kg in kindergartens[1:]]
-    miss_toys = toys.copy()
-    for i in range(len(kg_sets)):
-        for toy in kg_sets[i].data:
-            if toy in miss_toys:
-                miss_toys.remove(toy)
+    miss_toys = MySet(toys.copy())
+    for toy in kg_sets:
+        miss_toys = miss_toys.difference(toy)
     return miss_toys
 
 
