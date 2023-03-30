@@ -12,14 +12,14 @@ class Queue:
             self.size += 1
             self.data.append(elem)
         else:
-            raise IndexError('The queue is overflowed')
+            raise IndexError('Очередь переполнена.')
 
     def pop(self):
         if not self.size == 0:
             self.size -= 1
             return self.data.pop(0)
         else:
-            raise IndexError('The stack is underflowed')
+            raise IndexError('Очередь пуста.')
 
     def __str__(self):
         queue_values = []
