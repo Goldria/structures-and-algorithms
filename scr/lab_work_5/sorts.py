@@ -1,9 +1,8 @@
 import time
 import random
 
+
 # Сортировка расчёской, оставляя четные элементы на своих местах
-
-
 def comb_sort_odd(array):
     n = len(array)
     gap = n

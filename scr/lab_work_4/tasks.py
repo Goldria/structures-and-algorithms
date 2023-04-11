@@ -35,7 +35,7 @@ def first_task():
     print('Хэш-таблица:')
     table.print_table()
 
-    char = input('Введите слово для поиска: "\'')
+    char = input('Введите слово для поиска: ')
     count, _ = search_word(table, char)
     print(f'Буква (символ) {char} встречается {count} раз.')
 
@@ -81,4 +81,4 @@ def main(number_task=None):
 
 
 if __name__ == '__main__':
-    main(3)
+    main(1)
