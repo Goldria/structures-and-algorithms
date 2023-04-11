@@ -14,10 +14,6 @@ def binary_search(arr, low, high, x):
         return -1
 
 
-def generate_random_array(size):
-    return [random.randint(1, 100) for _ in range(size)]
-
-
 def find_matches(arr, key):
     arr.sort()
     indices = []
@@ -29,10 +25,10 @@ def find_matches(arr, key):
 
 if __name__ == '__main__':
     size = int(input("Введите размер массива: "))
-    key = int(input("Введите ключ поиска: "))
-    arr = generate_random_array(size)
+    arr = [random.randint(1, 100) for _ in range(size)]
     arr.sort()
     print("Отсортированный массив: ", arr)
+    key = int(input("Введите ключ поиска: "))
     index = binary_search(arr, 0, len(arr), key)
     if not index == -1:
         count, indices = find_matches(arr, key)

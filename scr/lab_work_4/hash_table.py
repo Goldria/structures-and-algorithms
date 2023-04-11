@@ -1,6 +1,6 @@
 class HashTable:
     def __init__(self, size):
-        self.size = size 
+        self.size = size
         self.table = [[] for _ in range(self.size)]
 
     def _hash(self, key):
@@ -34,5 +34,5 @@ class HashTable:
 
     def print_table(self):
         for i, cell in enumerate(self.table):
-            if not(cell == []): 
+            if not (cell == []):
                 print(f"Ячейка {i}: {cell}")
